@@ -74,11 +74,22 @@
       input {
         padding: 8px;
         border: 1px solid #f0f0f0;
+        width: 70px;
+      }
+
+      .input label {
+        font-family: poppinsBold;
+        color: #6d6d6dff;
+        font-size: 8px;
+      }
+
+      ::placeholder {
+        font-family: poppinsBold;
       }
 
       .line {
         height: 2px;
-        width: 500px;
+        width: 350px;
         background-color: #f0f0f0;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -110,7 +121,7 @@
       }
 
       .age-info {
-        color:#864dfeff ;
+        color: #864dfeff;
       }
 
       .attribution {
@@ -139,30 +150,36 @@
     <div class="main">
       <div class="date-input">
         <!-- Day DD Month MM Year YYYY -->
+
         <form action="">
           <div class="inputs">
+
             <div class="input">
               <label for="day"> DAY</label>
-              <input type="number" name="day"
-              placeholder="DD" />
+              <input id="birth-day" type="number" name="day" placeholder="DD" />
             </div>
+
+            
 
             <div class="input">
               <label for="month"> MONTH</label>
-              <input type="number" name="month"
-              placeholder="MM" />
+              <input 
+              id="month" type="number" name="month" placeholder="MM" />
             </div>
 
             <div class="input">
               <label for="year"> YEAR </label>
-              <input type="year" name="year"
-              placeholder="YYYY" />
+              <input id="year" type="year" name="year" placeholder="YYYY" />
             </div>
           </div>
 
           <div class="submit-button">
             <div class="line"></div>
-            <button type="submit" value="Submit">
+            <button
+            id="submitButton"
+              type="submit"
+              value="S/Users/adedamolaolusakin/Documents/Personal_Projects/Frontendmentor/age-calculator-app-main/design/desktop-design.jpgubmit"
+            >
               <img src="assets/images/icon-arrow.svg" alt="" />
             </button>
           </div>
@@ -172,16 +189,16 @@
       <div class="age">
         <!-- -- years -- months -- days -->
         <p>
-          <span class="age-info">38</span>
-          Years
+          <span class="age-info" id="years">38</span>
+          years
         </p>
         <p>
-          <span class="age-info">6</span>
-          Months
+          <span class="age-info" id="months">6</span>
+          months
         </p>
         <p>
-          <span class="age-info">12</span>
-          6 Days
+          <span class="age-info" id="days">12</span>
+          days
         </p>
       </div>
     </div>
@@ -191,5 +208,48 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div> -->
+    <script type="text/javascript">
+
+      let day = document.getElementById("birth-day")
+      let month = document.getElementById("month")
+      let year = document.getElementById("year")
+
+      let years = document.getElementById('years')
+      let months = document.getElementById('months')
+      let days = document.getElementById('days')
+      
+      day.addEventListener('input', getDay)
+      month.addEventListener('input', getMonth)
+      year.addEventListener('input', getYear)
+
+      let dayVal = 0
+      let monthVal = 0
+      let yearVal = 0
+
+      function getDay(e) {
+        dayVal = e.target.value
+      }
+      function getMonth(e) {
+        monthVal = e.target.value
+      }
+      function getYear(e) {
+        yearVal = e.target.value
+    
+      }
+
+      let submitButton = document.getElementById('submitButton')
+      
+      submitButton.addEventListener('click', getAge)
+      
+      function getAge(e){
+        e.preventDefault();
+        const date = new Date(yearVal, monthVal, dayVal)
+        
+        years.innerHTML = new Date().getFullYear()-date.getFullYear()
+        months.innerHTML = new Date().getMonth()-date.getMonth()
+        days.innerHTML = new Date().getDays()-date.getMonth()
+      }
+     
+    </script>
   </body>
 </html>
