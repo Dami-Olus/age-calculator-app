@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        background-color: #f0f0f0;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .main {
+        background-color: white;
+        padding: 50px;
+        border-radius: 10px 10px 80px 10px;
+      }
+
+      .inputs {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .input {
+          display: flex;
+          flex-direction: column;
+          margin-right: 15px;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .color {
+        --night: #141414ff;
+        --davys-gray: #4f4f4fff;
+        --white: #ffffffff;
+        --night-2: #161616ff;
+        --periwinkle: #d5c0fbff;
+        --jet: #2c2c2cff;
+        --antiflash-white: #f0f0f0ff;
+        --dim-gray: #6d6d6dff;
+        --medium-slate-blue: #864dfeff;
+        --onyx: #3d3d3dff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="date-input">
+        <!-- Day DD Month MM Year YYYY -->
+        <form action="">
+          <div class="inputs">
+          <div class="input">
+            <label for="day"> DAY</label>
+            <input type="date" name="day" />
+          </div>
+
+          <div class="input">
+            <label for="month"> MONTH</label>
+            <input type="month" name="month" />
+          </div>
+
+          <div class="input">
+            <label for="year"> YEAR </label>
+            <input type="year" name="year" />
+          </div>
+        </div>
+
+          <div>
+            <div class="line">Line</div>
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <!-- -- years -- months -- days -->
+        <p>38 Years</p>
+        <p>3 Months</p>
+        <p>6 Days</p>
+      </div>
+    </div>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
